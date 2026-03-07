@@ -1,0 +1,10 @@
+[project]
+name = "t3.unchat"
+version = "0.1.0"
+description = "Convert t3.chat JSON exports to structured markdown and styled HTML"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "markdown>=3.10.2",
+    "pygments>=2.19.2",
+]
