@@ -209,7 +209,11 @@ def extract_metadata(md_path: Path) -> dict | None:
     if not md_path.exists():
         return None
     text = md_path.read_text(encoding="utf-8")
-    match = re.search(r"```json\s*\n({.*?})\s*\n```", text, re.DOTALL)
+    match = re.search(
+        r"(?:^|\n)#+\s*Metadata\s*\n+```json\s*\n({.*?})\s*\n```",
+        text,
+        re.DOTALL,
+    )
     if not match:
         return None
     try:
